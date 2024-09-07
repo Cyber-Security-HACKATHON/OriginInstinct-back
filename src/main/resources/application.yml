@@ -6,3 +6,7 @@ server:
 # 구글 API KEY
 google:
   safeBrowsingApiKey : ${google.api-key}
+
+spring:
+  profiles:
+    include: key
