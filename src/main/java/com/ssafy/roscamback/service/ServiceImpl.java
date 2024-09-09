@@ -49,17 +49,18 @@ public class ServiceImpl implements com.ssafy.roscamback.service.Service {
         }
 
         CompletableFuture<CheckResponse> urlInspectionFuture = apiChecker.checkUrl(parsingList);
-        CompletableFuture<ChatAnalysisResponse> chatAnalysisFuture = fastApiUtil.analyzeChat();
+        CompletableFuture<String> chatAnalysisFuture = fastApiUtil.analyzeChat();
 
-            return urlInspectionFuture.thenCombine(chatAnalysisFuture, (urlResult, chatResult) -> {
-                AnalyzeResponse finalResponse = new AnalyzeResponse();
+        return urlInspectionFuture.thenCombine(chatAnalysisFuture, (urlResult, chatResult) -> {
+            AnalyzeResponse finalResponse = new AnalyzeResponse();
 
-                if(urlResult.getThreatMatches() != null) {
-                    finalResponse.setBadUrl(true);
-                }
+            if(urlResult.getThreatMatches() != null) {
+                finalResponse.setBadUrl(true);
+            }
 
-                return finalResponse;
-            });
+            return finalResponse;
+        });
+
     }
 
     /**
