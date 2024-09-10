@@ -1,19 +1,11 @@
 package com.ssafy.roscamback.controller;
 
-import com.ssafy.roscamback.request.AnalyzeRequest;
-import com.ssafy.roscamback.request.ThreatEntry;
-import com.ssafy.roscamback.response.AnalyzeResponse;
-import com.ssafy.roscamback.response.CheckResponse;
+import com.ssafy.roscamback.dto.request.AnalyzeRequest;
+import com.ssafy.roscamback.dto.response.AnalyzeResponse;
 import com.ssafy.roscamback.service.Service;
-import com.ssafy.roscamback.util.ApiChecker;
-import java.util.Collections;
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +18,7 @@ public class Controller {
 
     private final Service service;
 
+    private final ApplicationEventPublisher events;
 //    @PostMapping("/test")
 //    public CheckResponse testCheckUrl(@RequestBody ThreatEntry url) {
 //

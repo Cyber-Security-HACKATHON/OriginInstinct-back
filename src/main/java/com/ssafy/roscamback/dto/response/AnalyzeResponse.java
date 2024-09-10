@@ -1,6 +1,5 @@
-package com.ssafy.roscamback.response;
+package com.ssafy.roscamback.dto.response;
 
-import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +14,6 @@ public class AnalyzeResponse {
      * 3. 악성 URL 포함 여부
      * **/
     private ScamType isScam;
-    private List<String> chatList;
+    private String chatList;
     private boolean isBadUrl;
 }

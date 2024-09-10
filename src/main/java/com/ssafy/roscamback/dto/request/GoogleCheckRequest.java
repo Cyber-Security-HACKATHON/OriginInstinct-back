@@ -1,4 +1,4 @@
-package com.ssafy.roscamback.request;
+package com.ssafy.roscamback.dto.request;
 
 import lombok.Builder;
 import lombok.Getter;
