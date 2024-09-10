@@ -1,10 +1,7 @@
 package com.ssafy.roscamback.service;
 
-import com.ssafy.roscamback.request.AnalyzeRequest;
-import com.ssafy.roscamback.request.ThreatEntry;
-import com.ssafy.roscamback.response.AnalyzeResponse;
-import com.ssafy.roscamback.response.CheckResponse;
-import java.util.List;
+import com.ssafy.roscamback.dto.request.AnalyzeRequest;
+import com.ssafy.roscamback.dto.response.AnalyzeResponse;
 import java.util.concurrent.CompletableFuture;
 
 public interface Service {

@@ -1,4 +1,4 @@
-package com.ssafy.roscamback.response;
+package com.ssafy.roscamback.dto.response;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
