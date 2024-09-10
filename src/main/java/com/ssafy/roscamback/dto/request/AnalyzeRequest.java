@@ -9,5 +9,5 @@ import lombok.Setter;
 public class AnalyzeRequest {
     private String userId;
     private String otherId;
-    private List<String> chatList;
+    private String data;
 }
