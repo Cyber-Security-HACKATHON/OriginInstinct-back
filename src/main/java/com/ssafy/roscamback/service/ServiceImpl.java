@@ -1,5 +1,6 @@
 package com.ssafy.roscamback.service;
 
+import com.ssafy.roscamback.dto.response.ChatAnalysisResponse;
 import com.ssafy.roscamback.module.ChatSaveEvent;
 import com.ssafy.roscamback.dto.request.AnalyzeRequest;
 import com.ssafy.roscamback.dto.request.ThreatEntry;
@@ -37,7 +38,7 @@ public class ServiceImpl implements com.ssafy.roscamback.service.Service {
         eventPublisher.publishEvent(event);
 
         // Step 2. fastAPI 분석 비동기 요청
-        CompletableFuture<String> chatAnalysisFuture = fastApiUtil.analyzeChat();
+        CompletableFuture<ChatAnalysisResponse> chatAnalysisFuture = fastApiUtil.analyzeChat(request.getData());
 
         // Step 3. url 파싱이 된 경우 구글 세이프 브라우징 API 비동기 요청
         if(!url.getUrl().isEmpty()) {
@@ -61,7 +62,7 @@ public class ServiceImpl implements com.ssafy.roscamback.service.Service {
             // URL 파싱이 안된 경우 채팅 분석 결과만 응답
             return chatAnalysisFuture.thenApply(chatResult -> {
                 AnalyzeResponse response = new AnalyzeResponse();
-                response.setChatList(chatResult);
+                response.setChatResponse(chatResult);
                 return response;
             });
         }

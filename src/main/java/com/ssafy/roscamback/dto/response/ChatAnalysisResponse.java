@@ -5,8 +5,8 @@ import lombok.Getter;
 @Getter
 public class ChatAnalysisResponse {
 
-    private String msg;
-
-
+    private int predicted_index;
+    private String predicted_name;
+    private int result;
 
 }
