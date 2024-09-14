@@ -14,6 +14,6 @@ public class AnalyzeResponse {
      * 3. 악성 URL 포함 여부
      * **/
     private ScamType isScam;
-    private String chatList;
+    private ChatAnalysisResponse chatResponse;
     private boolean isBadUrl;
 }
