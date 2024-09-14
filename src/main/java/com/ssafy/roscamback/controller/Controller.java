@@ -6,10 +6,7 @@ import com.ssafy.roscamback.service.Service;
 import java.util.concurrent.CompletableFuture;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -25,6 +22,10 @@ public class Controller {
 //        return apiChecker.checkUrlTest(Collections.singletonList(url));
 //    }
 
+    @GetMapping("/test")
+    public String test() {
+        return "HHI"    ;
+    }
     @PostMapping("/analyze")
     public CompletableFuture<AnalyzeResponse> analyzeChat(@RequestBody AnalyzeRequest request) {
 
