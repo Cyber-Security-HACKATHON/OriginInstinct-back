@@ -1,5 +1,6 @@
-package com.ssafy.roscamback.dto.request;
+package com.ssafy.roscamback.dto.request.url;
 
+import com.ssafy.roscamback.dto.request.url.ThreatEntry;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;

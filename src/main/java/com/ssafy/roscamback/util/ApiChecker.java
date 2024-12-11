@@ -1,9 +1,9 @@
 package com.ssafy.roscamback.util;
 
-import com.ssafy.roscamback.dto.request.GoogleCheckRequest;
-import com.ssafy.roscamback.dto.request.ThreatEntry;
-import com.ssafy.roscamback.dto.request.ThreatInfo;
-import com.ssafy.roscamback.dto.response.CheckResponse;
+import com.ssafy.roscamback.dto.request.url.GoogleCheckRequest;
+import com.ssafy.roscamback.dto.request.url.ThreatEntry;
+import com.ssafy.roscamback.dto.request.url.ThreatInfo;
+import com.ssafy.roscamback.dto.response.url.CheckResponse;
 import java.util.concurrent.CompletableFuture;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
